@@ -67,7 +67,8 @@ const images = [
 // =---------= //
 
 const galleryContainer = document.querySelector('.gallery');
-const galleryMarkup = images.map(
+const galleryMarkup = images
+  .map(
   ({ preview, original, description }) => {
     return `
         <li class="gallery-item">
@@ -79,7 +80,32 @@ const galleryMarkup = images.map(
                 alt="Image description"
                 />
             </a>
-        </li>`;
+        </li>`
   });
-.join('');
+ .join('');
+
 galleryContainer.innerHTML = galleryMarkup;
+
+
+// ======= //
+
+galleryContainer.addEventListener('click', onGalleryClick);
+function onGalleryClick(event) {
+  event.preventDefault();
+
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+
+  const largeImageURL = event.target.dataset.source;
+  openModal(largeImageURL);
+}
+
+// ++++ //
+
+function openModal(imageUrl) {
+  const instance = basicLightbox.create(`
+    <img src="${imageUrl}" alt="Large Image" />
+    `);
+  instance.show();
+}

@@ -6,7 +6,44 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Document</title>
+    <title>Gallery</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+      integrity="sha256-r7Neol40GubQBzMKAJovEaXbl9FClnADCrIMPljlx3E="
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"
+      integrity="sha256-nMn34BfOxpKD0GwV5nZMwdS4e8SI8Ekz+G7dLeGE4XY="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- <style>
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .gallery-item {
+        flex-basis: calc(33.333% - 10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .gallery-link {
+        display: block;
+      }
+      .gallery-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+    </style> -->
   </head>
   <body>
     <ul class="gallery">
@@ -21,5 +58,7 @@
         </a>
       </li>
     </ul>
+
+    <script src="gallery.js"></script>
   </body>
 </html>
